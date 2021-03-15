@@ -20,6 +20,7 @@ const randomIntegerFromInterval = (min, max) => {
 let interval;
 
 function startAction() {
+  if (interval) return;
   interval = setInterval(() => {
     document.body.setAttribute(
       'style',
@@ -33,5 +34,6 @@ function startAction() {
 
 function stopAction() {
   clearInterval(interval);
+  interval = null;
   startBtnRef.disabled = false;
 }
